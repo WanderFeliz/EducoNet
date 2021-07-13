@@ -1,0 +1,78 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} EducoNet - Oferta educativa {% endblock %}
+
+{% block body %}
+    {% include 'base/header.html' with page='products' %}
+    <div class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Ofertas <strong class="black"> Educativas</strong></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2><strong class="black">Turismo</strong></h2>
+                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{% static 'images/turismo.jpg' %}" style="margin-top: 0;max-height: 600px; max-width: 600px;"  alt="img"/></figure>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br><br>
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2><strong class="black">Tecnólogo en Desarrollo de Software</strong></h2>
+                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{% static 'images/software.jpeg' %}" style="margin: 0 auto 40px auto; max-height: 600px; max-width: 600px;" alt="img"/></figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2><strong class="black">Tecnólogo en Diseño y Manufactura</strong></h2>
+                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{% static 'images/manufactura.jpg' %}" style="margin: 0 auto 40px auto; max-height: 600px; max-width: 600px;" alt="img"/></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    {% include 'base/footer.html' %}
+{% endblock %}

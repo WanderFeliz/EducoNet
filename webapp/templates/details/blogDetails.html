@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block head %}
+    {{ block.super }}
+{% endblock %}
+
+{% block body %}
+    {% include 'base/header.html' %}
+    <div id="blog" class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="title col-12">
+                    <h1 class="text-center">{{ blog_id.name }}</h1>
+                    <figure><img src="{{ blog_id.image.url }}" width="600px" height="600px" alt="img"/></figure>
+                </div>
+            </div>
+            {% for article in article_ids %}
+                <div class="row" style="margin-bottom: 2rem;">
+
+                    <article class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                        <div class="article_box">
+                            <h2><strong class="black"> {{ article.name }}</strong></h2>
+                            <p>{{ article.text_content }}</p>
+                            <div class="author"><p>Author: <b>{{ article.user }}</b></p></div>
+                            <a href="#">Read More</a>
+                        </div>
+                    </article>
+                    <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                        {% if article.image %}
+                            <div class="article_img" style="padding: 5%; margin-top: 20%">
+                                <figure><img src="{{ article.image.url }}" alt="img"/></figure>
+                            </div>
+                        {% endif %}
+                        {% if article.video %}
+                            <video class="video-fluid col" style="padding: 5%; margin-top: 20%" controls="controls">
+                                <source src="{{ article.video.url }}" type="video/mp4"/>
+                            </video>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    {% include 'base/footer.html' %}
+
+{% endblock %}

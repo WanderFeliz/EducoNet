@@ -1,0 +1,227 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} EducoNet - Inicio {% endblock %}
+
+
+<!-- body -->
+{% block body %}
+
+    {% include 'base/header.html' with page='home' %}
+
+    {% if blog_ids %}
+        <section class="slider_section">
+            <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                </ul>
+                <div class="carousel-inner">
+                    {% for blog in blog_ids %}
+                        <div class="carousel-item {% if blog == first_blog %} active {% endif %}">
+                            {% if blog.image %}
+                                <img class="first-slide" src="{{ blog.image.url }}" alt="First slide">
+                            {% else %}
+                                <img class="first-slide" src="#" alt="First slide">
+                            {% endif %}
+                            <div class="container">
+                                <div class="carousel-caption relative">
+                                    <span>{{ blog.name }}</span>
+
+                                    <p>{{ blog.description }}</p>
+                                    <a class="buynow" href="{% url 'details' blog.id %}"> Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <i class='fa fa-angle-left'></i>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <i class='fa fa-angle-right'></i>
+                </a>
+            </div>
+        </section>
+    {% endif %}
+
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>EducoNET<br><strong class="black">Aprende y comparte</strong></h2>
+                        <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex</p>
+                        <a href="#">Leer más</a>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                    <div class="about_img">
+                        <figure><img src="{% static 'images/starting_img.jpg' %}" alt="img"/></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+    <!-- for_box -->
+    <div class="for_box_bg">
+        <div class="container">
+            <div class="row" id="count_section">
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i class="fas fa-book"></i>
+                        <span>{{ book_count }}</span>
+                        <h3>Libros y documentos</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i class="fas fa-photo-video"></i>
+                        <span>{{ video_count }}</span>
+                        <h3>Videos</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i class="far fa-newspaper"></i>
+                        <span>{{ blog_count }}</span>
+                        <h3>Articulos</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 co-sm-l2">
+                    <div class="for_box">
+                        <i class="fas fa-school"></i>
+                        <span>{{ institute_count }}</span>
+                        <h3>Instituciones</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end for_box -->
+    <!-- offer -->
+    <div class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Ofertas <strong class="black"> Educativas</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offer-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
+                        <div class="offer_box">
+                            <h3>Tecnólogo en Desarrollo de Software</h3>
+                            <figure><img src="{% static 'images/software.jpeg' %}" alt="img"/></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin_ttt">
+                        <div class="offer_box">
+                            <h3>Turismo</h3>
+                            <figure><img src="{% static 'images/turismo.jpg' %}" alt="img"/></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmodmpor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin-lkk">
+                        <div class="offer_box">
+                            <h3>Tecnólogo en Diseño y Manufactura</h3>
+                            <figure><img src="{% static 'images/manufactura.jpg' %}" alt="img"/></figure>
+                            <p>consectetur adipiscing elit, sed do eiusmodmpor incididunt ut labore et dolore magna</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <a href="{% url 'products' %}" class="read-more">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end offer -->
+
+    <!-- product -->
+    <div id="product" class="product">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2>Biblio<strong class="black">teca</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/historia.jpg' %}" alt="#"/>
+                                    <h3>Historia</h3></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/ciencias.jpg' %}" alt="#"/>
+                                    <h3>Ciencias</h3>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/tesis.jpg' %}" alt="#"/>
+                                    <h3>Trabajos de Grado</h3></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/tecnologia.jpg' %}" alt="#"/>
+                                    <h3>Tecnología</h3></figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="product_box">
+                                <figure><img src="{% static 'images/matematicas.jpg' %}" alt="#"/>
+                                    <h3>Matemáticas</h3></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- end product -->
+
+
+    <!-- footer -->
+    <!--  footer -->
+    {% include 'base/footer.html' %}
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% load static %}
+<header>
+    <!-- header inner -->
+    <div class="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="{% url 'home' %}"><img src="{% static 'images/EducoNet.png' %}" alt="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="location_icon_bottum_tt">
+                        <ul>
+                            <li><i><span></span></i></li>
+                            <li><i class="far fa-envelope"><span><b> educonet@gmail.com</b></span></i></li>
+                            <li><i class="fas fa-phone"><span> (+1) 849-867-4590</span></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 location_icon_bottum">
+                    <div class="row">
+                        <div class="col-md-8 ">
+                            <div class="menu-area">
+                                <div class="limit-box">
+                                    <nav class="main-menu">
+                                        <ul class="menu-area-main">
+                                            {% if page != 'home' %}
+                                                <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+                                            {% endif %}
+                                            {% if page != 'products' %}
+                                                <li><a href="{% url 'products' %}">Oferta educativa</a></li>
+                                            {% endif %}
+                                            {% if page != 'library' %}
+                                                <li><a href="{% url 'library' %}">Biblioteca</a></li>
+                                            {% endif %}
+                                            {% if page != 'community' %}
+                                                <li><a href="{% url 'community' %}">Comunidad</a></li>
+                                            {% endif %}
+                                            {% if page != 'institutes' %}
+                                                <li><a href="{% url 'institutes' %}">Instituciones</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                            <form class="search">
+                                <input class="form-control" type="text" placeholder="Buscar">
+                                <button><img src="{% static 'images/search_icon.png' %}"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header inner -->
+</header>
+<!-- end header -->
